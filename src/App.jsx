@@ -7,6 +7,8 @@ import About from './components/About';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import MobileAppNavBar from './components/MobileAppNavBar';
+import WhatsAppCTA from './components/WhatsAppCTA';
 
 export default function App() {
   const [menuModalOpen, setMenuModalOpen] = useState(false);
@@ -52,6 +54,12 @@ export default function App() {
         onClose={handleCloseMenuModal}
         initialTab={initialMenuTab}
       />
+
+      {/* Floating WhatsApp CTA */}
+      <WhatsAppCTA />
+
+      {/* Mobile App Bottom Navigation Bar */}
+      <MobileAppNavBar onOpenMenuModal={handleOpenMenuModal} />
     </div>
   );
 }

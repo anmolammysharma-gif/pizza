@@ -1419,3 +1419,296 @@ ul, ol {
   padding: 10px;
   box-shadow: var(--shadow-md);
 }
+
+/* ==========================================================================
+   WHATSAPP BUTTONS & THEMING
+   ========================================================================== */
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+  background-color: #20ba5a;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.btn-whatsapp:active {
+  background-color: #1da851;
+  transform: translateY(0);
+}
+
+.header-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: #eafaf1;
+  color: #128c7e;
+  border: 1px solid #b7ebd0;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.header-whatsapp-btn:hover {
+  background-color: #25D366;
+  color: #ffffff;
+  border-color: #25D366;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .header-whatsapp-btn .header-whatsapp-text {
+    display: none;
+  }
+  .header-whatsapp-btn {
+    padding: 8px 10px;
+    border-radius: var(--radius-full);
+  }
+}
+
+.contact-icon-whatsapp {
+  background-color: #eafaf1 !important;
+  color: #25D366 !important;
+}
+
+.footer-social-whatsapp {
+  background-color: rgba(37, 211, 102, 0.15) !important;
+  color: #25D366 !important;
+}
+
+.footer-social-whatsapp:hover {
+  background-color: #25D366 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP WIDGET
+   ========================================================================== */
+.whatsapp-floating-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 990;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-floating-widget {
+    bottom: 84px; /* positioned comfortably above the mobile bottom bar */
+    right: 16px;
+  }
+}
+
+.whatsapp-floating-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.925rem;
+}
+
+.whatsapp-floating-btn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.55), 0 3px 8px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+.whatsapp-floating-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.whatsapp-pulse-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: var(--radius-full);
+  border: 2px solid #25D366;
+  animation: waPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-floating-label {
+    display: none;
+  }
+  .whatsapp-floating-btn {
+    padding: 14px;
+    border-radius: 50%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE APP BOTTOM NAVIGATION BAR (NATIVE APP FEEL)
+   ========================================================================== */
+.mobile-app-nav-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Prevent content under bottom nav */
+  body, .app-layout {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-app-nav-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 995;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(220, 220, 220, 0.65);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .mobile-app-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 64px;
+    padding: 0 8px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .mobile-app-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-size: 0.725rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    flex: 1;
+    min-height: 48px;
+  }
+
+  .mobile-app-nav-item:active {
+    transform: scale(0.92);
+    color: var(--color-orange);
+  }
+
+  .mobile-app-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+  }
+
+  .mobile-app-nav-whatsapp {
+    color: #128c7e;
+  }
+  .mobile-app-nav-whatsapp:active {
+    color: #25D366;
+  }
+
+  .mobile-app-nav-order-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--color-orange);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(244, 123, 32, 0.4);
+    text-decoration: none;
+    margin-left: 4px;
+    transition: all var(--transition-fast);
+    min-height: 40px;
+  }
+
+  .mobile-app-nav-order-pill:active {
+    transform: scale(0.94);
+    background-color: var(--color-orange-active);
+  }
+}
+
+/* ==========================================================================
+   MOBILE APP TOUCH & RESPONSIVENESS ENHANCEMENTS
+   ========================================================================== */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2.15rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .modal-content {
+    margin: 10px;
+    max-height: 90vh;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
